@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    background-color: black;
+}
+.button{
+    background-color: aqua;
+}
+body{
+   background-image: url(img/roshi.jpg); 
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   background-attachment: fixed;
+}   
