@@ -17,7 +17,8 @@
     <h2 id="fecha"></h2>
 
     <div class="container">
-        <a href="gym/registro_asistencia.php">Ingresar al sistema</a>
+        <a href="gym/registro_asistencia_cliente.php">Registro Asistencia Cliente</a>
+        <a href="gym/registro_clientes.php">Registro Cliente</a>
         <p>Ingrese su DNI</p>
         <form action="" method="POST">
             <input type="text" placeholder="DNI del empleado" name="txtdni" required>
@@ -33,6 +34,6 @@
         }, 1000);
     </script>
 
-    <?php include "controlador/controlador_registrar_asistencia.php"; ?>
+    <?php include "controlador/controlador_registrar_asistencia_cliente.php"; ?>
 </body>
 </html>
