@@ -20,7 +20,7 @@
         <h2 id="fecha"></h2>
         <p>Ingrese su DNI</p>
         <form id="form-asistencia">
-            <input type="text" class="dni" placeholder="DNI del empleado" name="txtdni" required>
+            <input type="text" class="dni" placeholder="DNI del Cliente" name="txtdni" required>
             <br><br><br>
             <button type="button" class="entrada" onclick="registrarAsistencia('entrada')">ENTRADA</button>
         </form>

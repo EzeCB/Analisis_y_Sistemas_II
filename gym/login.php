@@ -13,24 +13,28 @@
             margin-top: 5px;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="../css/loginestilos.css" />
 </head>
 <body>
-    <h1>Inicio de Sesión</h1>
+    <div class="container">
+        
+        <h1>Inicio de Sesión</h1>
 
-    <form id="loginForm">
-        <label for="txtUsuario">Usuario:</label><br>
-        <input type="text" id="txtUsuario" name="usuario" required><br><br>
+        <form id="loginForm">
+            <label for="txtUsuario">Usuario:</label><br>
+            <input type="text" id="txtUsuario" name="usuario" required><br><br>
 
-        <label for="txtcontraseña">Contraseña:</label><br>
-        <input type="password" id="txtcontraseña" name="contraseña" required><br><br>
+            <label for="txtcontraseña">Contraseña:</label><br>
+            <input type="password" id="txtcontraseña" name="contraseña" required><br><br>
 
-        <button type="submit">Iniciar Sesión</button>
-    </form>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
     
-    <a href="registrar_usuario.php">Registrarse</a>
-    <a href="../index.html">Volver</a>
-    <div id="mensaje"></div>
-
+        <a href="registrar_usuario.php">Registrarse</a>
+        <a href="../index.html">Volver</a>
+        <div id="mensaje"></div>
+        
+    </div>
     <script>
         $(document).ready(function() {
             $('#loginForm').submit(function(event) {

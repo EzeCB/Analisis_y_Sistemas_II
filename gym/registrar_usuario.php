@@ -13,11 +13,13 @@
             margin-top: 5px;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="../css/registrousuarioestilo.css" />
 </head>
 <body>
-    <h1>Registro de Usuario</h1>
+    <div class="container">
+        <h1>Registro de Usuario</h1>
 
-    <form id="registroForm">
+        <form id="registroForm">
         <label for="txtUsuario">Usuario:</label><br>
         <input type="text" id="txtUsuario" name="usuario" required><br><br>
 
@@ -51,12 +53,12 @@
         </select><br><br>
 
         <button type="submit">Registrarse</button>
-    </form>
+        </form>
 
-    <a href="login.php">Volver</a>
+        <a href="login.php">Volver</a>
 
-    <div id="mensaje"></div>
-
+        <div id="mensaje"></div>
+    </div>
     <script>
         $(document).ready(function() {
             $('#selectEmpleado').change(function() {

@@ -17,7 +17,7 @@ if (!isset($_SESSION['id_usuario'])) {
     <title>Registros de Asistencia</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="../css/registroasistenciaempleadoestilo.css" />
 </head>
 <body>
 
@@ -64,6 +64,8 @@ if (!isset($_SESSION['id_usuario'])) {
         </div>
     </nav>
 
+    <div class="container">
+
     <h1>Registros de Asistencia</h1>
 
     <table border="1">
@@ -108,6 +110,8 @@ if (!isset($_SESSION['id_usuario'])) {
 
     <a href="../index.php">Inicio</a>
 
+    </div>
+    
     <script src="../js/jquery_min.js"></script>
 </body>
 </html>
