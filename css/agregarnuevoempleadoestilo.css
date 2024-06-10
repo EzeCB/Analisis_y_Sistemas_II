@@ -1,0 +1,56 @@
+body {
+    background-image: url('../img/roshi.jpg'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover; /* Hace que la imagen de fondo cubra toda la pantalla */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Cambia la dirección del flujo para apilar los elementos verticalmente */
+    align-items: center;
+    min-height: 100vh; /* Establece la altura mínima del cuerpo al 100% del viewport height */
+}
+
+.navbar {
+    background-color: #0051ff; /* Color de fondo */
+    width: 100%; /* Ocupa todo el ancho */
+    position: fixed; /* Fija la barra de navegación en la parte superior */
+    top: 0; /* Alinea la barra de navegación en la parte superior */
+    z-index: 1000; /* Asegura que la barra de navegación esté encima de otros elementos */
+}
+
+.container {
+    margin-top: 70px; /* Margen superior para evitar que el contenido se superponga con la barra de navegación */
+    text-align: center; /* Centra el contenido */
+    text-align: center; /* Centrar texto */
+    background-color: rgba(255, 255, 255, 0.8); /* Color de fondo con transparencia */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    background-color: rgba(241, 230, 211, 0.7);
+    border-style: solid;
+    border-radius: 5%;
+    padding: 2em; /* Añade padding para asegurar que el contenido no toque los bordes */
+    width: 80%; /* Ancho inicial relativo al contenedor padre */
+    max-width: 50em; /* Ancho máximo para grandes pantallas */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+}
+
+
+h1 {
+    font-size: 2.5em; /* Tamaño de fuente del título */
+    color: #000000; /* Color del texto */
+}
+
+p {
+    font-size: 1.2em; /* Tamaño de fuente del párrafo */
+    color: #000000; /* Color del texto */
+}
+
+.navbar.navbar-expand-lg.bg-body-tertiary {
+    background-color: #cc7f0b;
+}

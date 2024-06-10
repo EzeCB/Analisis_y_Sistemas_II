@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../img/roshi.jpg'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover; /* Hace que la imagen de fondo cubra toda la pantalla */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    background-color: rgba(241, 230, 211, 0.7);
+    border-style: solid;
+    border-radius: 5%;
+    padding: 2em; /* Añade padding para asegurar que el contenido no toque los bordes */
+    width: 80%; /* Ancho inicial relativo al contenedor padre */
+    max-width: 50em; /* Ancho máximo para grandes pantallas */
+    height: auto; /* Altura automática basada en el contenido */
+    max-height: none; /* Altura máxima deshabilitada */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 2em; /* Ajusta el tamaño según prefieras */
+    margin: 0.5em 0; /* Margen superior e inferior */
+    width: 100%; /* Asegura que el h1 ocupe todo el ancho del contenedor */
+}
+
+#loginForm {
+    background-color: transparent; /* Fondo transparente */
+    padding: 2em; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: none; /* Sin sombra */
+    width: 100%; /* Ancho del formulario */
+    max-width: 300px; /* Ancho máximo del formulario */
+    text-align: center; /* Centrar texto y elementos */
+}
+
+#loginForm label {
+    display: block; /* Hacer que las etiquetas sean bloques */
+    margin-bottom: 0.5em; /* Espacio inferior */
+    font-weight: bold; /* Texto en negrita */
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+    width: 100%; /* Ancho completo */
+    padding: 0.5em; /* Espaciado interno */
+    margin-bottom: 1em; /* Espacio inferior */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluir padding y border en el tamaño total */
+}
+
+#loginForm button {
+    background-color: #007BFF; /* Color de fondo azul */
+    color: #ffffff; /* Color del texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 0.75em 1.5em; /* Espaciado interno */
+    cursor: pointer; /* Cambiar cursor a mano al pasar por encima */
+    font-size: 1em; /* Tamaño de fuente */
+    transition: background-color 0.3s; /* Transición suave al cambiar de color */
+    width: 100%; /* Ancho completo */
+}
+
+#loginForm button:hover {
+    background-color: #0056b3; /* Azul más oscuro */
+}
+
+.container a {
+    display: block; /* Convertir en bloques */
+    margin: 0.5em 0; /* Espaciado vertical */
+    color: #007BFF; /* Color azul */
+    text-decoration: none; /* Sin subrayado */
+    width: 100%; /* Ancho completo */
+    text-align: center; /* Centrar texto */
+}
+
+.container a:hover {
+    text-decoration: underline; /* Subrayado */
+}
+
+#mensaje {
+    margin-top: 1em; /* Espacio superior */
+    color: red; /* Color del texto */
+    width: 100%; /* Ancho completo */
+    text-align: center; /* Centrar texto */
+}

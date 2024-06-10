@@ -1,25 +1,27 @@
-
-body {
-    background-image: url(../img/roshi.jpg); 
-    background-repeat: no-repeat; 
-    background-size: cover; 
-    background-position: center; 
-    margin: 0; 
-    width: 100%;
-    height: 100%;
+body { 
+    background-image: url('../img/roshi.jpg'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover; /* Hace que la imagen de fondo cubra toda la pantalla */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
     background-color: rgba(241, 230, 211, 0.7);
     border-style: solid;
     border-radius: 5%;
-    width: 50em;
-    height: 26em;
-    margin: 7.5em 23em;
+    width: 80%; /* Ancho inicial relativo al contenedor padre */
+    max-width: 50em; /* Ancho máximo para grandes pantallas */
+    padding: 2em; /* Padding interno para que el contenido no toque los bordes */
+    text-align: center; /* Centrar texto y elementos */
 }
 
 h1 {
-    text-align: center;
     font-size: 3em;
     margin: 1.2em 0em;
 }

@@ -13,10 +13,11 @@ body {
     background-color: rgba(241, 230, 211, 0.7);
     border-style: solid;
     border-radius: 5%;
-    width: 50em;
-    height: 26em;
-    margin: 7.5em 0em 5.2em 23em;
-    text-align: center;
+    width: 80%; /* Ancho inicial relativo al contenedor padre */
+    height: auto; /* Altura automática basada en el contenido */
+    max-width: 50em; /* Ancho máximo para grandes pantallas */
+    max-height: 26em; /* Altura máxima para grandes pantallas */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
 }
 
 .container h1, h2 {
