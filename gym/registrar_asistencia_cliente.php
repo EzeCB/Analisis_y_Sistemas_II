@@ -24,7 +24,7 @@
             <br><br><br>
             <button type="button" class="entrada" onclick="registrarAsistencia('entrada')">ENTRADA</button>
         </form>
-
+        <br>
     <a href="../index.html" class="volver">Volver</a>
 
     </div>

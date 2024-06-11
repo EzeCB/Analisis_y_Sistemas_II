@@ -7,7 +7,6 @@
     <title>Registro de Asistencia</title>
     <link rel="stylesheet" href="path/to/your/css/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/menuempleadoestilo.css" />
     <style>
         .mensaje {
             display: none;
@@ -26,6 +25,7 @@
             border: 1px solid #f5c6cb;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="../css/registrarasistenciaempleadoestilo.css" />
 </head>
 <body>
     <div class="container">
@@ -39,7 +39,7 @@
             <button type="button" class="salida" onclick="registrarAsistencia('salida')">Salida</button>
         </form>
         <p id="mensaje" class="mensaje"></p>
-
+        <br>
     <a href="../index.html" class="volver">Volver</a>
 
     </div>

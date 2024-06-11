@@ -50,8 +50,8 @@
                 }
             }
             ?>
-        </select><br><br>
-
+        </select>
+        <br><br>
         <button type="submit">Registrarse</button>
         </form>
 
