@@ -63,7 +63,7 @@ body {
 }
 
 #loginForm button {
-    background-color: #007BFF; /* Color de fondo azul */
+    background-color: #929496; /* Color de fondo azul */
     color: #ffffff; /* Color del texto blanco */
     border: none; /* Sin borde */
     border-radius: 5px; /* Bordes redondeados */
@@ -75,20 +75,25 @@ body {
 }
 
 #loginForm button:hover {
-    background-color: #0056b3; /* Azul más oscuro */
+    background-color: #373838; 
 }
 
 .container a {
     display: block; /* Convertir en bloques */
     margin: 0.5em 0; /* Espaciado vertical */
-    color: #007BFF; /* Color azul */
+    color: #fcfcfc; /* Color azul */
     text-decoration: none; /* Sin subrayado */
-    width: 100%; /* Ancho completo */
+    width: 30%; /* Ancho completo */
     text-align: center; /* Centrar texto */
+    border: 2px solid rgb(158, 151, 151);
+    border-radius: 10px;
+    padding: 10px 0;
+    background-color: #929496;
 }
 
 .container a:hover {
     text-decoration: underline; /* Subrayado */
+    background-color: #373838; 
 }
 
 #mensaje {

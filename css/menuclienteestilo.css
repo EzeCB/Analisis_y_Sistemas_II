@@ -40,3 +40,67 @@ h1 {
     padding: 0.2em;
     margin: -0.2em 0 0 0.2em; 
 }
+
+.container a.volver {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 15px;
+    border: 2px solid rgb(108, 108, 110);
+    border-radius: 10px;
+    display: inline-block;
+    background-color: rgb(141, 132, 131);
+    cursor: pointer;
+}
+
+.entrada {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 15px;
+    border: 2px solid rgb(108, 108, 110);
+    border-radius: 10px;
+    display: inline-block;
+    background-color: rgb(141, 132, 131);
+    cursor: pointer;
+}
+.container a.volver {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 15px;
+    border: 2px solid rgb(108, 108, 110);
+    border-radius: 10px;
+    display: inline-block;
+    background-color: rgb(141, 132, 131);
+    cursor: pointer;
+}
+
+.container a.entrada {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 15px;
+    border: 2px solid rgb(108, 108, 110);
+    border-radius: 10px;
+    display: inline-block;
+    background-color: rgb(141, 132, 131);
+    cursor: pointer;
+}
+
+.container a.salida {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 15px;
+    border: 2px solid rgb(108, 108, 110);
+    border-radius: 10px;
+    display: inline-block;
+    background-color: rgb(141, 132, 131);
+    cursor: pointer;
+}

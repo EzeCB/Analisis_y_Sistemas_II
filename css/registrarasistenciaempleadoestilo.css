@@ -54,7 +54,7 @@ h1 {
     cursor: pointer;
 }
 
-.container a.entrada {
+.entrada {
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: bold;
@@ -67,7 +67,7 @@ h1 {
     cursor: pointer;
 }
 
-.container a.salida {
+.salida {
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: bold;
