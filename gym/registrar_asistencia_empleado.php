@@ -7,7 +7,7 @@
     <title>Registro de Asistencia</title>
     <link rel="stylesheet" href="path/to/your/css/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/menu_empleado2.css" />
+    <link rel="stylesheet" type="text/css" href="../css/menuempleadoestilo.css" />
     <style>
         .mensaje {
             display: none;
@@ -39,9 +39,10 @@
             <button type="button" class="salida" onclick="registrarAsistencia('salida')">Salida</button>
         </form>
         <p id="mensaje" class="mensaje"></p>
-    </div>
 
     <a href="../index.html" class="volver">Volver</a>
+
+    </div>
 
     <script>
         function actualizarFecha() {

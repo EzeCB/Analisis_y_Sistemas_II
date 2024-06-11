@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.buttons.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/menu_cliente2.css" />
+    <link rel="stylesheet" type="text/css" href="../css/menuclienteestilo.css" />
         
 </head>
 <body>
@@ -24,9 +24,10 @@
             <br><br><br>
             <button type="button" class="entrada" onclick="registrarAsistencia('entrada')">ENTRADA</button>
         </form>
-    </div>
 
     <a href="../index.html" class="volver">Volver</a>
+
+    </div>
 
     <script>
         function actualizarFechaHora() {
