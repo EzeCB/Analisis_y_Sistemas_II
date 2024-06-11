@@ -75,49 +75,49 @@ if (!isset($_SESSION['id_usuario'])) {
 
     <div class="container">
 
-    <h1>Registros de Asistencia</h1>
+        <h1>Registros de Asistencia</h1>
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>DNI</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Entrada</th>
-                <th>Salida</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            include "../modelo/conexion.php";
+        <table border="1" class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Entrada</th>
+                    <th>Salida</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                include "../modelo/conexion.php";
 
-            $query = "SELECT entrada_salida_empleado.id_empleado, empleado.dni, empleado.nombre, empleado.apellido, 
-                      entrada_salida_empleado.entrada, entrada_salida_empleado.salida 
-                      FROM entrada_salida_empleado 
-                      INNER JOIN empleado ON entrada_salida_empleado.id_empleado = empleado.id_empleado";
-            $result = $conexion->query($query);
+                $query = "SELECT entrada_salida_empleado.id_empleado, empleado.dni, empleado.nombre, empleado.apellido, 
+                        entrada_salida_empleado.entrada, entrada_salida_empleado.salida 
+                        FROM entrada_salida_empleado 
+                        INNER JOIN empleado ON entrada_salida_empleado.id_empleado = empleado.id_empleado";
+                $result = $conexion->query($query);
 
-            // Verifica si hay resultados
-            if ($result->num_rows > 0) {
-                // Itera sobre los resultados y muestra cada fila en la tabla
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>" . htmlspecialchars($row['dni']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['nombre']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['apellido']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['entrada']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['salida']) . "</td>";
-                    echo "</tr>";
+                // Verifica si hay resultados
+                if ($result->num_rows > 0) {
+                    // Itera sobre los resultados y muestra cada fila en la tabla
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . htmlspecialchars($row['dni']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['nombre']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['apellido']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['entrada']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['salida']) . "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    // Si no hay registros, muestra un mensaje en la tabla
+                    echo "<tr><td colspan='5'>No hay registros de asistencia.</td></tr>";
                 }
-            } else {
-                // Si no hay registros, muestra un mensaje en la tabla
-                echo "<tr><td colspan='5'>No hay registros de asistencia.</td></tr>";
-            }
-            ?>
-        </tbody>
-    </table>
+                ?>
+            </tbody>
+        </table>
 
-    <a href="../index.php">Inicio</a>
+        <a href="../index.php">Inicio</a>
 
     </div>
     

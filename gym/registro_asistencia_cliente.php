@@ -78,8 +78,8 @@ if (!isset($_SESSION['id_usuario'])) {
 
     <h1>Registros de Asistencia</h1>
 
-    <table border="1">
-        <thead>
+    <table border="1" class="table">
+        <thead class="table-dark">
             <tr>
                 <th>DNI</th>
                 <th>Nombre</th>

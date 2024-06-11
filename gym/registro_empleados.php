@@ -18,6 +18,7 @@ if (!isset($_SESSION['id_usuario'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/registroempleadoestilo.css" />
+
 </head>
 <body>
 
@@ -75,51 +76,52 @@ if (!isset($_SESSION['id_usuario'])) {
 
     <div class="container">
 
-    <h1>Registros de Empleados</h1>
-    <a href="agregar_empleado.php">Agregar Nuevo Empleado</a>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>DNI</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            include "../modelo/conexion.php";
+        <h1>Registros de Empleados</h1>
+        <a href="agregar_empleado.php">Agregar Nuevo Empleado</a>
+        <table border="1" class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                include "../modelo/conexion.php";
 
-            $query = "SELECT dni, nombre, apellido FROM empleado";
-            $result = $conexion->query($query);
+                $query = "SELECT dni, nombre, apellido FROM empleado";
+                $result = $conexion->query($query);
 
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td class='dni'>" . htmlspecialchars($row['dni']) . "</td>";
-                    echo "<td class='nombre'>" . htmlspecialchars($row['nombre']) . "</td>";
-                    echo "<td class='apellido'>" . htmlspecialchars($row['apellido']) . "</td>";
-                    echo "<td><button onclick='editarRegistro(this)'>Editar</button><button onclick='eliminarRegistro(\"" . htmlspecialchars($row['dni']) . "\")'>Eliminar</button></td>";
-                    echo "</tr>";
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td class='dni'>" . htmlspecialchars($row['dni']) . "</td>";
+                        echo "<td class='nombre'>" . htmlspecialchars($row['nombre']) . "</td>";
+                        echo "<td class='apellido'>" . htmlspecialchars($row['apellido']) . "</td>";
+                        echo "<td><button onclick='editarRegistro(this)'>Editar</button><button onclick='eliminarRegistro(\"" . htmlspecialchars($row['dni']) . "\")'>Eliminar</button></td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='4'>No hay registros de asistencia.</td></tr>";
                 }
-            } else {
-                echo "<tr><td colspan='4'>No hay registros de asistencia.</td></tr>";
-            }
-            ?>
-        </tbody>
-    </table>
+                ?>
+            </tbody>
+        </table>
 
-    <form id="editForm" style="display:none;">
-        <h2>Editar Empleado</h2>
-        <input type="hidden" id="editDni" name="dni">
-        <label for="editNombre">Nombre:</label>
-        <input type="text" id="editNombre" name="nombre"><br><br>
-        <label for="editApellido">Apellido:</label>
-        <input type="text" id="editApellido" name="apellido"><br><br>
-        <button type="button" onclick="guardarCambios()">Guardar</button>
-    </form>
+        <form id="editForm" style="display:none;">
+            <h2>Editar Empleado</h2>
+            <input type="hidden" id="editDni" name="dni">
+            <label for="editNombre">Nombre:</label>
+            <input type="text" id="editNombre" name="nombre"><br><br>
+            <label for="editApellido">Apellido:</label>
+            <input type="text" id="editApellido" name="apellido"><br><br>
+            <button type="button" onclick="location.href='registro_empleados.php'">Cancelar</button>
+            <button type="button" onclick="guardarCambios()">Guardar</button>
+        </form>
 
-    <a href="../index.php">Inicio</a>
+        <a href="../index.php">Inicio</a>
     
     </div>
 
