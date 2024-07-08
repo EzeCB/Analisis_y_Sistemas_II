@@ -42,6 +42,7 @@ if (!isset($_SESSION['id_usuario'])) {
                             <li><a class="dropdown-item" href="agregar_cliente.php">AGREGAR CLIENTE</a></li>
                             <li><a class="dropdown-item" href="registro_clientes.php">REGISTRO CLIENTES</a></li>
                             <li><a class="dropdown-item" href="registro_asistencia_cliente.php">ASISTENCIA CLIENTES</a></li>
+                            <li><a class="dropdown-item" href="listaclientes.php">LISTA DE CLIENTES</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">

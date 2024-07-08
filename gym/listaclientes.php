@@ -8,24 +8,47 @@ if (!isset($_SESSION['id_usuario'])) {
 }
 ?>
 
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "ssgym";
+
+try {
+    $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+    die("Error en la conexión: " . $e->getMessage());
+}
+
+$query = "SELECT cl.id_cliente, cl.nombre AS nombre_cliente, en.id_empleado, en.nombre AS nombre_empleado 
+          FROM cliente cl
+          LEFT JOIN asignaciones a ON cl.id_cliente = a.id_cliente
+          LEFT JOIN empleado en ON a.id_empleado = en.id_empleado";
+
+try {
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch(PDOException $e) {
+    die("Error en la consulta: " . $e->getMessage());
+}
+?>
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar Nuevo Cliente</title>
+    <title>Lista de Clientes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../css/agregarnuevoclienteestilo.css" />
+    <link rel="stylesheet" type="text/css" href="../css/inicioestilos.css">
 </head>
 <body>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="">SSGYM</a>
+            <a class="navbar-brand" href="#">SSGYM</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -35,9 +58,7 @@ if (!isset($_SESSION['id_usuario'])) {
                         <a class="nav-link active" aria-current="page" href="inicio.php">INICIO</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        CLIENTE
-                        </a>
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">CLIENTE</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="agregar_cliente.php">AGREGAR CLIENTE</a></li>
                             <li><a class="dropdown-item" href="registro_clientes.php">REGISTRO CLIENTES</a></li>
@@ -45,20 +66,16 @@ if (!isset($_SESSION['id_usuario'])) {
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        EMPLEADO
-                        </a>
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">EMPLEADO</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="agregar_empleado.php">AGREGAR EMPLEADO</a></li>
                             <li><a class="dropdown-item" href="registro_empleados.php">REGISTRO EMPLEADOS</a></li>
                             <li><a class="dropdown-item" href="registro_asistencia_empleado.php">ASISTENCIA EMPLEADOS</a></li>
-                            <li><a class="dropdown-item" href="listaclientes.php">LISTA DE CLIENTES</a></li>
+                            <li><a class="dropdown-item" href="lista_de_clientes.php">LISTA DE CLIENTES</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        RUTINAS
-                        </a>
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">RUTINAS</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="cargar_rutinas.php">AGREGAR RUTINA</a></li>
                             <li><a class="dropdown-item" href="rutinas.php">VER RUTINAS</a></li>
@@ -73,45 +90,31 @@ if (!isset($_SESSION['id_usuario'])) {
             </div>
         </div>
     </nav>
+
     <div class="container">
-    <h1>Agregar Nuevo Cliente</h1>
-    <form id="addForm" action="../controlador/controlador_agregar_cliente.php" method="POST">
-        <label for="dni">DNI:</label>
-        <input type="text" id="dni" name="dni" required><br><br>
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required><br><br>
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" required><br><br>
-        <label for="cuota">Cuota:</label>
-        <input type="date" id="cuota" name="cuota" required><br><br>
-        <label for="empleado">Empleado a Cargo:</label>
-        <select id="empleado" name="empleado" >
-            <option value="">Seleccione..</option>
-            <?php
-            include_once "../modelo/basedatos.php";
-            $con = mysqli_connect($host, $username, $pass, $database);
-            $query = "SELECT id_empleado, nombre FROM empleado";
-            $result = mysqli_query($con, $query);
-
-            if ($result -> num_rows > 0) {
-                while ($row = $result ->fetch_assoc()) {
-                     echo "<option value='" . $row['id_empleado'] . "'>" . $row['nombre'] . "</option>";
-                }
-            } else {
-                echo "No hay empleados disponibles.";
-            }
-
-            $con->close();
-            ?>
-
-        </select>
-
-        <br><br>
-
-        <button type="submit">Agregar</button>
-    </form>
-
-    <a href="registro_clientes.php">Volver a la lista de clientes</a>
+        <?php if (count($clientes) > 0): ?>
+            <h2>Listado de Clientes por Profesor</h2>
+            <ul class="list-group">
+                <?php
+                $currentEmpleado = null;
+                foreach ($clientes as $cliente):
+                    if ($currentEmpleado !== $cliente['nombre_empleado']): ?>
+                        <?php if ($currentEmpleado !== null): ?>
+                            </ul>
+                        <?php endif; ?>
+                        <li class="list-group-item active"><?php echo $cliente['nombre_empleado']; ?></li>
+                        <ul class="list-group">
+                        <?php $currentEmpleado = $cliente['nombre_empleado']; ?>
+                    <?php endif; ?>
+                    <li class="list-group-item"><?php echo $cliente['nombre_cliente']; ?></li>
+                <?php endforeach; ?>
+                </ul>
+            </ul>
+        <?php else: ?>
+            <p>No se encontraron clientes registrados en el gimnasio.</p>
+        <?php endif; ?>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

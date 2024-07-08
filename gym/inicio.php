@@ -51,6 +51,7 @@ if (!isset($_SESSION['id_usuario'])) {
                             <li><a class="dropdown-item" href="agregar_empleado.php">AGREGAR EMPLEADO</a></li>
                             <li><a class="dropdown-item" href="registro_empleados.php">REGISTRO EMPLEADOS</a></li>
                             <li><a class="dropdown-item" href="registro_asistencia_empleado.php">ASISTENCIA EMPLEADOS</a></li>
+                            <li><a class="dropdown-item" href="listaclientes.php">LISTA DE CLIENTES</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
